@@ -1,0 +1,12 @@
+{
+  "_readme": "Per-game fixes the Xbox (WinGDK) build of a game needs before its mods work. Files are written relative to the game's Content folder and put back whenever they go missing (the CurseForge app replaces the ue4ss folder when it installs a mod). A fixpacks.json next to XboxModBridge.exe adds to or replaces these by name.",
+  "packs": [
+    {
+      "name": "RuneScape: Dragonwilds - UE4SS signature for the Xbox build",
+      "ueProject": "RSDragonwilds",
+      "files": {
+        "RSDragonwilds/Binaries/WinGDK/ue4ss/UE4SS_Signatures/StaticConstructObject.lua": "-- StaticConstructObject_Internal for the Xbox PC (WinGDK) build of RuneScape: Dragonwilds,\n-- where UE4SS's built-in pattern finds nothing. Taken from the Steam build's function start.\nfunction Register()\n    return \"4C 8B DC 55 53 41 56 49 8D AB ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 85 ?? ?? ?? ?? 8B 41 70\"\nend\n\nfunction OnMatchFound(MatchAddress)\n    return MatchAddress\nend\n"
+      }
+    }
+  ]
+}
